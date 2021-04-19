@@ -21,15 +21,18 @@ const port = process.env.PORT || 3001;
 // we also specify our callback, which is what the api does
 
 // app.use(router);
-app.use(express.json());
-app.use(bodyParser.json());
-app.use(router);
+// app.use(express.json());
+// app.use(bodyParser.json());
+// app.use(router);
 
 app.get("/", (req, res) => {
     res.send("Hello World")  // response sent to browser
 })
 
 app.use(cors())
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(router);
 
 // telling our app the port to listen to for requests
 // key for the port to work

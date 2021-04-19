@@ -15,7 +15,7 @@ membersRouter.post("/", Authenticate, addMember); // bcse add member function ha
 membersRouter.get("/:id", Authenticate, viewMember);
 
 // view all members
-membersRouter.get("/", Authenticate, viewAllMembers);
+membersRouter.get("/", viewAllMembers); // had authenticate
 
 // update members
 membersRouter.put("/:id", Authenticate, updateMember);
