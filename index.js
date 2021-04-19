@@ -6,6 +6,7 @@ import express from 'express'; // es6
 import router from "./routes/index.js";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
+import cors from "cors";
 
 const app = express();  // now we have an express app
 
@@ -28,6 +29,7 @@ app.get("/", (req, res) => {
     res.send("Hello World")  // response sent to browser
 })
 
+app.use(cors())
 
 // telling our app the port to listen to for requests
 // key for the port to work
